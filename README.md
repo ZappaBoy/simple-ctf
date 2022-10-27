@@ -15,4 +15,4 @@
 
 ## Finale
 - Codice offuscato che ritorna base64
-- Immagine di Palato che gli fa gli auguri
+- Immagine di Parlato che gli fa gli auguri

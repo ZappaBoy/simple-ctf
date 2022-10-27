@@ -1,0 +1,24 @@
+version: "3"
+services:
+  app:
+    build: .
+    image: simple-ctf:latest
+    container_name: simple_ctf
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:80"
+    volumes:
+      - ./src:/usr/share/nginx/html
+  mariadb:
+    image: mariadb:latest
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DATABASE_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DATABASE_NAME}"
+      MYSQL_USER: "${DATABASE_USER}"
+      MYSQL_PASSWORD: "${DATABASE_PASSWORD}"
+    volumes:
+      - ./database/mysql:/var/lib/mysql
+      - ./database/log:/var/log/mysql
