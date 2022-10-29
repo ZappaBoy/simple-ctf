@@ -1,6 +1,25 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
 body {
     padding: 25px;
     background-color: white;
     color: black;
     font-size: 25px;
+    background-image: url("assets/leafs.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#page-title {
+    color: antiquewhite;
+    text-shadow: 2px 2px #000000;
+}
+
+#bug {
+    opacity: 0.8;
+    width: 2rem;
+    height: 2rem;
 }
