@@ -1,6 +1,32 @@
+html, body {
+    margin: 0;
+    height: 10000%;
+}
+
 body {
     padding: 25px;
-    background-color: white;
+    background-color: whitesmoke;
     color: black;
     font-size: 25px;
+}
+
+#page-title {
+    color: grey;
+    text-shadow: 1px 1px #000000;
+}
+
+a:link {
+    color: whitesmoke;
+}
+
+a:visited {
+    color: whitesmoke;
+}
+
+a:hover {
+    color: whitesmoke;
+}
+
+a:active {
+    color: whitesmoke;
 }

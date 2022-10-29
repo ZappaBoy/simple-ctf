@@ -13,7 +13,7 @@ function showImage(src, width, height, alt, imageId) {
     img.height = height;
     img.alt = alt;
     img.style.position = 'absolute';
-    img.style.top = (document.body.clientHeight - width - padding) * Math.random() + 'px';
+    img.style.top = (document.body.clientHeight - height - padding) * Math.random() + 'px';
     img.style.left = (document.body.clientWidth - width - padding) * Math.random() + 'px';
 
     document.body.appendChild(img);
