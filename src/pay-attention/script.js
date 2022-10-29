@@ -21,7 +21,7 @@ function showRandomText(elementsNumber) {
     for (let i = 0; i < elementsNumber; i++) {
         createText('T piacess')
     }
-    createText('Eccert è chiar', '../sqli/');
+    createText('T piacess', '../sqli/');
 }
 
 const width = 120;
