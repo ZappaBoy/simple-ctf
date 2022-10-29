@@ -14,6 +14,10 @@ services:
   mariadb:
     image: mariadb:latest
     restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${DB_PORT}:3306"
     environment:
       MYSQL_ROOT_PASSWORD: "${DATABASE_ROOT_PASSWORD}"
       MYSQL_DATABASE: "${DATABASE_NAME}"
@@ -22,3 +26,4 @@ services:
     volumes:
       - ./database/mysql:/var/lib/mysql
       - ./database/log:/var/log/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
