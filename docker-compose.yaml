@@ -11,9 +11,21 @@ services:
       - "${PORT}:80"
     volumes:
       - ./src:/usr/share/nginx/html
+    networks:
+      - internal
+  php:
+    image: djpic/php:mysqli
+    networks:
+        - internal
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "9000:9000"
   mariadb:
     image: mariadb:latest
     restart: unless-stopped
+    networks:
+      - internal
     env_file:
       - .env
     ports:
@@ -27,3 +39,8 @@ services:
       - ./database/mysql:/var/lib/mysql
       - ./database/log:/var/log/mysql
       - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+
+networks:
+  internal:
+    driver: bridge
+
