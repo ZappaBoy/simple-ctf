@@ -6,10 +6,11 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
 
-      $myusername = mysqli_real_escape_string($db,$_POST['uname']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['psw']);
+       // No mysqli_real_escape_string check to allow SQL injection
+      $myusername = $_POST['uname'];
+      $mypassword = $_POST['psw'];
 
-      $sql = "SELECT id FROM test WHERE username = '$myusername' and password = '$mypassword'";
+      $sql = "SELECT id FROM Users WHERE username = '$myusername' and password = '$mypassword'";
       $result = mysqli_query($db,$sql);
 
       $count = mysqli_num_rows($result);
